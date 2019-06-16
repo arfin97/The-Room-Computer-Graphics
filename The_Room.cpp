@@ -19,7 +19,7 @@ void display(void) {
     glEnd();
 
 /// Floor horizontal lines
-    int y, z=50;
+    int x, y, z=50;
     for(y=50; y<1000; y+=z, z-=2){
         glColor3d(.7, .7, .7);
         glBegin(GL_LINES);
@@ -247,6 +247,25 @@ void display(void) {
     glVertex2d(380, 330);
     glEnd();
 
+
+    int gridDis = 20;
+/// Page grid vertical
+    for(int i=0; i<=1000; i+=gridDis){
+        glColor3d(1, 0, 0);
+        glBegin(GL_LINES);
+        glVertex2d(i, 0);
+        glVertex2d(i, 1000);
+        glEnd();
+    }
+
+/// Page grid horizontal
+    for(int i=0; i<=1000; i+=gridDis){
+        glColor3d(1, 0, 0);
+        glBegin(GL_LINES);
+        glVertex2d(0, i);
+        glVertex2d(1000, i);
+        glEnd();
+    }
 
 //
 ////wall left-right
