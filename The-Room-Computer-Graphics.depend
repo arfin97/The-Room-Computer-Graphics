@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1560709322 source:f:\projects\the-room-computer-graphics\the_room.cpp
+	<GL/gl.h>
+	<GL/glut.h>
+
