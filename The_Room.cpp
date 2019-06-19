@@ -1,6 +1,28 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
+double hh = 1000, ww = 1000;
 //int d=20,p,gx=0,hy=0,hxc=495,gyc=795,ha,gb;
+
+void showGrid(double h, double w, double dis){
+/// Page grid vertical
+    for(int i=0; i<=w; i+=dis){
+        glColor3d(1, 0, 0);
+        glBegin(GL_LINES);
+        glVertex2d(i, 0);
+        glVertex2d(i, 1000);
+        glEnd();
+    }
+
+    /// Page grid horizontal
+    for(int i=0; i<=h; i+=dis){
+        glColor3d(1, 0, 0);
+        glBegin(GL_LINES);
+        glVertex2d(0, i);
+        glVertex2d(1000, i);
+        glEnd();
+    }
+}
+
 void display(void) {
     /* clear all pixels */
     glClear (GL_COLOR_BUFFER_BIT);
@@ -248,24 +270,7 @@ void display(void) {
     glEnd();
 
 
-    int gridDis = 20;
-/// Page grid vertical
-    for(int i=0; i<=1000; i+=gridDis){
-        glColor3d(1, 0, 0);
-        glBegin(GL_LINES);
-        glVertex2d(i, 0);
-        glVertex2d(i, 1000);
-        glEnd();
-    }
-
-/// Page grid horizontal
-    for(int i=0; i<=1000; i+=gridDis){
-        glColor3d(1, 0, 0);
-        glBegin(GL_LINES);
-        glVertex2d(0, i);
-        glVertex2d(1000, i);
-        glEnd();
-    }
+    showGrid(hh, ww);
 
 //
 ////wall left-right
@@ -1232,7 +1237,7 @@ void init (void) {
     /* initialize viewing values */
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0.0, 1000.0, 0.0, 1000.0, 0.0, 1000.0);
+    glOrtho(0.0, ww, 0.0, hh, 0.0, 1000.0);
 }
 /*
 * Declare initial window size, position, and display mode
