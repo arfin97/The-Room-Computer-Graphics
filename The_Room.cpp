@@ -298,8 +298,8 @@ void display(void) {
     glColor3d(0.15, 0.19, 0.22);
     glBegin(GL_POLYGON);
     glVertex2d(220, 640);
-    glVertex2d(220, 760);
-    glVertex2d(320, 860);
+    glVertex2d(220, 790);
+    glVertex2d(320, 830);
     glVertex2d(320, 740);
     glEnd();
 
@@ -308,8 +308,8 @@ void display(void) {
     glColor3d(0.15, 0.19, 1);
     glBegin(GL_POLYGON);
     glVertex2d(220, 660);
-    glVertex2d(220, 740);
-    glVertex2d(320, 840);
+    glVertex2d(220, 770);
+    glVertex2d(320, 810);
     glVertex2d(320, 760);
     glEnd();
 
